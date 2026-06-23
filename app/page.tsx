@@ -205,7 +205,7 @@ export default function HomePage() {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {filtered.map((item, i) => {
-            const inCart = isInCart(item.equipmentId ?? item.id)
+            const inCart = isInCart(item.id)
             const isAvailable = item.available
             const daysCount = cart.eventDate && cart.returnDate
               ? Math.max(1, Math.ceil((new Date(cart.returnDate).getTime() - new Date(cart.eventDate).getTime()) / (1000 * 60 * 60 * 24)) + 1)
